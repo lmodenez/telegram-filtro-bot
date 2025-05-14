@@ -5,7 +5,7 @@ from config.settings import settings
 
 class TelegramFiltered:
     def __init__(self):
-        self.client = TelegramClient('bot_session', settings.API_ID, settings.API_HASH)
+        self.client = TelegramClient('/app/session/user_session', settings.API_ID, settings.API_HASH)
 
     def run(self):
         @self.client.on(events.NewMessage())
@@ -19,7 +19,7 @@ class TelegramFiltered:
 
         print("⚡️ Monitoramento de canais iniciado!")
         print("Pressione Ctrl+C para sair.\n")
-        self.client.start(bot_token=settings.BOT_TOKEN)
+        self.client.start()
         self.client.run_until_disconnected()
 
     def handle_new_message(self, channel: str, message: str):
