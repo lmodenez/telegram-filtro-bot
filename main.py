@@ -5,7 +5,7 @@ from config.settings import settings
 
 class TelegramFiltered:
     def __init__(self):
-        self.client = TelegramClient('user_session', settings.API_ID, settings.API_HASH)
+        self.client = TelegramClient('bot_session', settings.API_ID, settings.API_HASH)
 
     def run(self):
         @self.client.on(events.NewMessage())
