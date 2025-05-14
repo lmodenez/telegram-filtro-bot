@@ -9,8 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN mkdir -p /app/session
-
-ENV SESSION_PATH=/app/session/user_session.session
-RUN bash -c 'if [ ! -z "$SESSION_B64" ]; then echo "$SESSION_B64" | base64 -d > $SESSION_PATH; fi'
+RUN bash -c 'if [ ! -z "$SESSION_B64" ]; then echo "$SESSION_B64" | base64 -d > /app/session/user_session.session; fi'
 
 CMD ["python", "main.py"]
