@@ -19,7 +19,7 @@ class TelegramFiltered:
 
         print("⚡️ Monitoramento de canais iniciado!")
         print("Pressione Ctrl+C para sair.\n")
-        self.client.start()
+        self.client.start(bot_token=settings.BOT_TOKEN)
         self.client.run_until_disconnected()
 
     def handle_new_message(self, channel: str, message: str):
