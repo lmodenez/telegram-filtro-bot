@@ -15,6 +15,7 @@ class Settings:
         self.CHAT_ID = os.getenv("CHAT_ID", "")
         self.KEYWORDS = str_list(os.getenv("KEYWORDS", "").lower())
         self.CHANNELS = str_list(os.getenv("CHANNELS", "").lower())
+        self.SESSION_STRING = os.getenv("SESSION_STRING", "")
 
         self.validate()
 
